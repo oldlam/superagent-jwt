@@ -17,14 +17,16 @@ $ npm i superagent-jwt -S
 
 ```js
 var request = require('superagent');
-var jwt = require('superagent-jwt');
+var JWT = require('superagent-jwt');
+
+var jwt = JWT({
+  header: 'jwt', // header name to try reading JWT from responses, default to 'jwt'
+  local: 'jwt'   // key to store the JWT in localStorage, also default to 'jwt'
+});
 
 request
   .get('/some-url')
-  .use(jwt({
-    header: 'JWT', // header name to try reading JWT from responses, default to 'JWT'
-    local: 'JWT'   // key to store the JWT in localStorage, also default to 'JWT'
-  }))
+  .use(jwt)
   .end(function(err, res) {
     /**
      * JWT will be sent along with the request

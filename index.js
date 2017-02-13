@@ -2,8 +2,8 @@ exports = module.exports = function(options) {
 
   options = options || {};
 
-  if (!options.header) options.header = 'JWT';
-  if (!options.local) options.header = 'JWT';
+  if (!options.header) options.header = 'jwt';
+  if (!options.local) options.local = 'jwt';
 
   return function jwtPlugin(request) {
 
