@@ -1,0 +1,26 @@
+{
+  "name": "superagent-jwt",
+  "version": "0.1.0",
+  "description": "a superagent plugin to store/send JWT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/oldlam/superagent-jwt.git"
+  },
+  "keywords": [
+    "node",
+    "superagent",
+    "plugin",
+    "ajax",
+    "request",
+    "jwt",
+    "localStorage",
+    "header"
+  ],
+  "author": "Marv Lam <arlam@me.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oldlam/superagent-jwt/issues"
+  },
+  "homepage": "https://github.com/oldlam/superagent-jwt#readme"
+}
