@@ -5,7 +5,7 @@ a [superagent](https://github.com/visionmedia/superagent) plugin to retrieve/add
 this plugin:
 
 - tries to retrieve JWT from response header and store it to localStorage
-- set JWT in request *Authorization* header if any it was saved to localStorage before
+- set JWT in request *Authorization* header if any was saved to localStorage before
 
 ## Installation
 
@@ -23,7 +23,7 @@ request
   .get('/some-url')
   .use(jwt({
     header: 'JWT', // header name to try reading JWT from responses, default to 'JWT'
-    local: 'JWT'   // key to store the JWT in localStorage
+    local: 'JWT'   // key to store the JWT in localStorage, also default to 'JWT'
   }))
   .end(function(err, res) {
     /**
