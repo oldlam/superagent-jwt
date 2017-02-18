@@ -1,9 +1,9 @@
-exports = module.exports = function(options) {
+exports = module.exports = function(opts) {
 
-  options = options || {};
+  if (undefined === opts) opts = {};
 
-  if (!options.header) options.header = 'jwt';
-  if (!options.local) options.local = 'jwt';
+  opts.header = (undefined !== opts.header) ? opts.header.toLowerCase() : 'jwt';
+  opts.local = (undefined !== opts.local) ? opts.local : 'jwt';
 
   return function jwtPlugin(request) {
 
@@ -12,15 +12,15 @@ exports = module.exports = function(options) {
       return request;
     }
 
-    var localJwt = localStorage.getItem(options.local);
+    var localJwt = localStorage.getItem(opts.local);
     if (localJwt) {
       request.set({ Authorization: 'Bearer ' + localJwt });
     }
 
     request.on('response', function(res) {
-      var resJwt = res.header[options.header];
+      var resJwt = res.header[opts.header];
       if (resJwt) {
-        localStorage.setItem(options.local, resJwt);
+        localStorage.setItem(opts.local, resJwt);
       }
     });
 

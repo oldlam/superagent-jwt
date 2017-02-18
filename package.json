@@ -1,6 +1,6 @@
 {
   "name": "superagent-jwt",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "a superagent plugin to store/send JWT",
   "main": "index.js",
   "repository": {
