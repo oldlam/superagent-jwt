@@ -2,7 +2,7 @@ exports = module.exports = function(opts) {
 
   if (undefined === opts) opts = {};
 
-  opts.header = (undefined !== opts.header) ? opts.header.toLowerCase() : 'jwt';
+  opts.header = (undefined !== opts.header) ? opts.header : 'jwt';
   opts.local = (undefined !== opts.local) ? opts.local : 'jwt';
 
   return function jwtPlugin(request) {
